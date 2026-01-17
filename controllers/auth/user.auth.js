@@ -66,7 +66,7 @@ async function userProfile(req, res) {
             })
         }
 
-        return res.status(200).json({ success: true, msg: "data fetched successfully", data: user,code:1 });
+        return res.status(200).json({ success: true, msg: "data fetched successfully", data: user});
     } catch (error) {
         return res.status(500).json({ success: false, msg: error.msg, data: null })
     }
