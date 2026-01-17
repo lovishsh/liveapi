@@ -3,6 +3,7 @@ name: Deploy to Ec2
 on:
  push:
   branches: [master]
+  environment: liveapi
 
 jobs: 
  deploy:
