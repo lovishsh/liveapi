@@ -57,7 +57,7 @@ async function userProfile(req, res) {
     const { user_id } = req.query;
     try {
 
-        const user = await User.findById(user_id);
+        const user = await User.findById(user_id).select("_id name email");
         if (!user) {
             return res.status(400).json({
                 success: false,
