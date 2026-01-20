@@ -4,8 +4,10 @@ import express from "express";
 const app=express();
 import router from "./routers/index.js"
 import connectDB from "./middleware/DBConnection.js";
+import intializeRedis from "./Service/redis.js";
 connectDB();
 app.use(express.json({limit:'100mb'}));
 app.use(express.urlencoded({extended:true}));
-app.use(process.env.API_ROUTE,router)
+app.use(process.env.API_ROUTE,router);
+intializeRedis();
 export default app;
